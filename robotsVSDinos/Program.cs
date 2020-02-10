@@ -10,17 +10,9 @@ namespace robotsVSDinos
     {
         static void Main(string[] args)
         {
-            weapon sword = new weapon("Sword");
+            Heard dinos = new Heard();
 
-            Console.WriteLine(sword.typeWeapon);
-            Console.WriteLine(sword.weaponDurability);
-            Console.WriteLine(sword.attackPower);
-
-            sword.useWeapon();
-
-            Console.WriteLine(sword.typeWeapon);
-            Console.WriteLine(sword.weaponDurability);
-            Console.WriteLine(sword.attackPower);
+            Console.WriteLine(dinos.tRex);
 
             Console.ReadLine();
 

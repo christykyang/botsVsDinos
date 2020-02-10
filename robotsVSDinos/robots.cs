@@ -6,34 +6,41 @@ using System.Threading.Tasks;
 
 namespace robotsVSDinos
 {
-    class robot
+    class Robot
     {
-        
+
         //member variables (HAS A)
         public string name;
         public int healthFull;
         public int powerLevel;
-        public string attackPower;
-        public string robotWeapon;
-        
-        
+        public int attackPower;
+        public Weapon robotWeapon;
+
 
 
         //constructors (SPAWNER)
-        public robot()
+        public Robot(string name)
         {
-            name = "Donny";
+            this.name = name;
+            attackPower = 10;
             healthFull = 100;
             powerLevel = 10;
-            attackPower = "Cut";
-            robotWeapon = "Sword";
-
+            PickUpWeapon();
         }
 
         //member methods (CAN DO)
-        public void attackDino()
+        public void PickUpWeapon()
+        {
+            robotWeapon = new Weapon("Gun");
+        }
+        public void AttackDino()
         {
             powerLevel -= 1;
+            robotWeapon.useWeapon();
+        }
+        public void LoseHealth()
+        {
+            healthFull -= 10;
         }
     }
 }

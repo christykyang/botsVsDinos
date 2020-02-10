@@ -6,7 +6,27 @@ using System.Threading.Tasks;
 
 namespace robotsVSDinos
 {
-    class heard
+    class Heard
     {
+        //variables (HAS A)
+        public Dino tRex;
+        //public Dino raptor;
+        //public Dino triCeratops;
+
+        //constructors (Spawner)
+        public Heard()
+        {
+            tRex = new Dino("T-Rex", 10);
+        }
+
+        //methods (CAN DO)
+        public void AttackRobots()
+        {
+            tRex.AttackRobot();
+        }
+        public void LoseHealth()
+        {
+            tRex.LoseHealth();
+        }
     }
 }
