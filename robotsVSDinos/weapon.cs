@@ -25,8 +25,15 @@ namespace robotsVSDinos
 
         public void useWeapon()
         {
-            attackPower += 10;
-            weaponDurability -= 1;
+            if (weaponDurability > 0)
+            {
+                attackPower += 10;
+                weaponDurability -= 1;
+            }
+            else if (weaponDurability >= 0)
+            {
+                Console.WriteLine("Weapon broke, please use different weapon.");
+            }
         }
 
     }

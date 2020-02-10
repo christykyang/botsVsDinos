@@ -10,12 +10,11 @@ namespace robotsVSDinos
     {
         static void Main(string[] args)
         {
-            Heard dinos = new Heard();
 
-            Console.WriteLine(dinos.tRex);
-
+            Battlefield battlefield = new Battlefield();
+            
+            Console.WriteLine();
             Console.ReadLine();
-
 
         }
     }

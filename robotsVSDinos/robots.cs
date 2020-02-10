@@ -11,7 +11,7 @@ namespace robotsVSDinos
 
         //member variables (HAS A)
         public string name;
-        public int healthFull;
+        public int healthRobot;
         public int powerLevel;
         public int attackPower;
         public Weapon robotWeapon;
@@ -23,9 +23,12 @@ namespace robotsVSDinos
         {
             this.name = name;
             attackPower = 10;
-            healthFull = 100;
+            healthRobot = 100;
             powerLevel = 10;
             PickUpWeapon();
+            Console.WriteLine("You have spawn " + name + " for your fleet.");
+            Console.WriteLine(name + " has stats of " + attackPower + " attack power, " + healthRobot + " health and " + powerLevel + " power level.");
+            Console.ReadLine();
         }
 
         //member methods (CAN DO)
@@ -33,14 +36,30 @@ namespace robotsVSDinos
         {
             robotWeapon = new Weapon("Gun");
         }
-        public void AttackDino()
+        public void AttackDino(Dino dino)
         {
-            powerLevel -= 1;
-            robotWeapon.useWeapon();
+            if (powerLevel >= 1)
+            {
+                powerLevel -= 1;
+                robotWeapon.useWeapon();
+                dino.healthDino -= attackPower;
+            }
+            else if (powerLevel >= 0)
+            {
+                Console.WriteLine("Robot out of power, cannot attack.");
+            }
+            
         }
         public void LoseHealth()
         {
-            healthFull -= 10;
+            if (healthRobot >= 1)
+            {
+                healthRobot -= 10;
+            }
+            else if (healthRobot >= 0)
+            { 
+                Console.WriteLine("This robot has lost all health!"); 
+            }
         }
     }
 }

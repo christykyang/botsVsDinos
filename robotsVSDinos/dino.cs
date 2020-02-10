@@ -10,29 +10,45 @@ namespace robotsVSDinos
     {
         //member variables (HAS A)
         public string typeOfDino;
-        public int healthDinoFull;
+        public int healthDino;
         public int attackPower;
         public int energyLevel;
 
         //constructors (SPAWNER)
-        public Dino(string typeOfDino, int attackPower)
+        public Dino(string typeOfDino)
         {
             this.typeOfDino = typeOfDino;
-            this.attackPower = attackPower;
-            healthDinoFull = 100;
+            attackPower = 10;
+            healthDino = 100;
             energyLevel = 5;
-
+            Console.WriteLine("You have spawn " + typeOfDino + " for your herd.");
+            Console.WriteLine(typeOfDino + " has " + attackPower + " attack power " + healthDino + " health and " + energyLevel + " energy level.");
+            Console.ReadLine();
         }
 
         //member methods (CAN DO)
-        public void AttackRobot()
+        public void AttackRobot(Robot robot)
         {
-            energyLevel -= 1;
+            if (energyLevel >= 1)
+            {
+                energyLevel -= 1;
+            }
+            else if (energyLevel >= 0)
+            {
+                Console.WriteLine("This Dino is out of energy and cannot attack!");
+            }
 
         }
         public void LoseHealth()
         {
-            healthDinoFull -= 10;
+            if (healthDino >= 1)
+            {
+                healthDino -= 10;
+            }
+            else if (healthDino >= 0)
+            {
+                Console.WriteLine("This Dino has lost all health!");
+            }
         }
     }
 }
