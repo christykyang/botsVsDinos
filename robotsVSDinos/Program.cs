@@ -12,9 +12,8 @@ namespace robotsVSDinos
         {
 
             Battlefield battlefield = new Battlefield();
-            
-            Console.WriteLine();
-            Console.ReadLine();
+            battlefield.RunGame();
+
 
         }
     }

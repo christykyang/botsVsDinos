@@ -29,12 +29,21 @@ namespace robotsVSDinos
         }
 
         //methods (CAN DO)
-
         public void DinosLoseGame()
         {
-            dinoList[0].healthDino = 0;
-            dinoList[1].healthDino = 0;
-            dinoList[2].healthDino = 0;
+            if (dinoList[0].healthDino == 0 && dinoList[1].healthDino == 0 && dinoList[2].healthDino == 0);
+            {
+                Console.WriteLine("Robots win!");
+                Console.ReadLine();
+            }
+            
         }
+        public int GetHealthOfHerd()
+        {
+            int healthOfAllDinos;
+            healthOfAllDinos = dinoList[0].healthDino + dinoList[1].healthDino + dinoList[2].healthDino;
+            return healthOfAllDinos;
+        }
+
     }
 }

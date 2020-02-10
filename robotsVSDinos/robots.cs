@@ -22,9 +22,9 @@ namespace robotsVSDinos
         public Robot(string name)
         {
             this.name = name;
-            attackPower = 10;
-            healthRobot = 100;
-            powerLevel = 10;
+            attackPower = 1;
+            healthRobot = 1;
+            powerLevel = 1;
             PickUpWeapon();
             Console.WriteLine("You have spawn " + name + " for your fleet.");
             Console.WriteLine(name + " has stats of " + attackPower + " attack power, " + healthRobot + " health and " + powerLevel + " power level.");
@@ -38,15 +38,22 @@ namespace robotsVSDinos
         }
         public void AttackDino(Dino dino)
         {
-            if (powerLevel >= 1)
+            if (powerLevel >= 1 && healthRobot >= 1)
             {
                 powerLevel -= 1;
                 robotWeapon.useWeapon();
                 dino.healthDino -= attackPower;
+                Console.WriteLine(name + " used " + robotWeapon.typeWeapon + " to attack " + dino.typeOfDino + ".");
+                Console.WriteLine(dino.typeOfDino + " loss " + attackPower + " health.");
+                Console.WriteLine(name + " has " + attackPower + " attack power.");
+                Console.WriteLine(name + " has " + powerLevel + " power level.");
+                Console.WriteLine(name + " has " + healthRobot + " health.");
+                Console.ReadLine();
             }
-            else if (powerLevel >= 0)
+            else 
             {
-                Console.WriteLine("Robot out of power, cannot attack.");
+                Console.WriteLine(name + " is out of power and/or health and cannot attack.");
+                Console.ReadLine();
             }
             
         }
@@ -54,11 +61,12 @@ namespace robotsVSDinos
         {
             if (healthRobot >= 1)
             {
-                healthRobot -= 10;
+                healthRobot -= 1;
             }
             else if (healthRobot >= 0)
             { 
-                Console.WriteLine("This robot has lost all health!"); 
+                Console.WriteLine(name + " has lost all health!");
+                Console.ReadLine();
             }
         }
     }

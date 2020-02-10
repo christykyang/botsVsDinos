@@ -33,8 +33,18 @@ namespace robotsVSDinos
 
         public void BotsLoseGame()
         {
+            if (robotList[0].healthRobot == 0 && robotList[1].healthRobot == 0 && robotList[2].healthRobot == 0)
+            {
+                Console.WriteLine("Dinosaurs win!");
+                Console.ReadLine();
+            }
             
-            
+        }
+        public int GetHealthOfFleet()
+        {
+            int healthOfAllRobots;
+            healthOfAllRobots = robotList[0].healthRobot + robotList[1].healthRobot + robotList[2].healthRobot;
+            return healthOfAllRobots;
         }
 
     }
