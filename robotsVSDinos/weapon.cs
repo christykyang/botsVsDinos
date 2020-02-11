@@ -32,8 +32,9 @@ namespace robotsVSDinos
             }
             else if (weaponDurability >= 0)
             {
-                Console.WriteLine("Weapon broke, please use different weapon.");
+                Console.WriteLine("Weapon broke, please sue different weapon.");
             }
+   
         }
 
     }

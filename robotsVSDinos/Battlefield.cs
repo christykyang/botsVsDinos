@@ -12,8 +12,6 @@ namespace robotsVSDinos
         //variables (HAS A)
         public Fleet bots;
         public Herd dinos;
-        public int dinosHealth;
-        public int robotsHealth;
 
  
 
@@ -22,8 +20,6 @@ namespace robotsVSDinos
         {
             bots = new Fleet();
             dinos = new Herd();
-            dinosHealth = dinos.dinoList[0].healthDino + dinos.dinoList[1].healthDino + dinos.dinoList[2].healthDino;
-            robotsHealth = bots.robotList[0].healthRobot + bots.robotList[1].healthRobot + bots.robotList[2].healthRobot;
         }
 
         //methods (CAN DO)
@@ -69,17 +65,7 @@ namespace robotsVSDinos
             bots.robotList[2].LoseHealth();
 
         }
-        public void DisplayWinner()
-        {
-            if (robotsHealth <= 0)
-            {
-                Console.WriteLine("Dinos win!");
-            }
-            else if (dinosHealth <= 0)
-            {
-                Console.WriteLine("Robots win!");
-            }
-        }
+  
 
 
 

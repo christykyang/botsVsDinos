@@ -21,10 +21,11 @@ namespace robotsVSDinos
         //constructors (SPAWNER)
         public Robot(string name)
         {
+
             this.name = name;
-            attackPower = 1;
-            healthRobot = 1;
-            powerLevel = 1;
+            attackPower = 10;
+            healthRobot = 100;
+            powerLevel = 100;
             PickUpWeapon();
             Console.WriteLine("You have spawn " + name + " for your fleet.");
             Console.WriteLine(name + " has stats of " + attackPower + " attack power, " + healthRobot + " health and " + powerLevel + " power level.");
@@ -40,7 +41,7 @@ namespace robotsVSDinos
         {
             if (powerLevel >= 1 && healthRobot >= 1)
             {
-                powerLevel -= 1;
+                powerLevel -= 10;
                 robotWeapon.useWeapon();
                 dino.healthDino -= attackPower;
                 Console.WriteLine(name + " used " + robotWeapon.typeWeapon + " to attack " + dino.typeOfDino + ".");
@@ -61,7 +62,7 @@ namespace robotsVSDinos
         {
             if (healthRobot >= 1)
             {
-                healthRobot -= 1;
+                healthRobot -= 10;
             }
             else if (healthRobot >= 0)
             { 

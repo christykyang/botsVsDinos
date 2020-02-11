@@ -18,9 +18,9 @@ namespace robotsVSDinos
         public Dino(string typeOfDino)
         {
             this.typeOfDino = typeOfDino;
-            attackPower = 1;
-            healthDino = 1;
-            energyLevel = 1;
+            attackPower = 10;
+            healthDino = 100;
+            energyLevel = 100;
             Console.WriteLine("You have spawn " + typeOfDino + " for your herd.");
             Console.WriteLine(typeOfDino + " has " + attackPower + " attack power " + healthDino + " health and " + energyLevel + " energy level.");
             Console.ReadLine();
@@ -51,7 +51,7 @@ namespace robotsVSDinos
         {
             if (healthDino >= 1)
             {
-                healthDino -= 1;
+                healthDino -= 10;
             }
             else if (healthDino >= 0)
             {

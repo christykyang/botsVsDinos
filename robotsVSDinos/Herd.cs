@@ -35,6 +35,7 @@ namespace robotsVSDinos
             {
                 Console.WriteLine("Robots win!");
                 Console.ReadLine();
+
             }
             
         }
