@@ -18,8 +18,18 @@ namespace robotsVSDinos
         //constructors (spawner)
         public Battlefield()
         {
+            Console.WriteLine("Welcome to Robots VS. Dinosaurs!");
+            Console.ReadLine();
+            Console.WriteLine("Lets play!");
+            Console.ReadLine();
+            Console.WriteLine("We will create your fleet first!");
+            Console.ReadLine();
             bots = new Fleet();
+            Console.WriteLine("Now that your fleet is complete we shall create your herd!");
+            Console.ReadLine();
             dinos = new Herd();
+            Console.WriteLine("Game start!");
+            Console.ReadLine();
         }
 
         //methods (CAN DO)
