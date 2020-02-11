@@ -31,7 +31,7 @@ namespace robotsVSDinos
         {
             if (energyLevel >= 1 && healthDino >= 1)
             {
-                energyLevel -= 1;
+                energyLevel -= 10;
                 robot.healthRobot -= attackPower;
                 Console.WriteLine(typeOfDino + " attacked " + robot.name + ".");
                 Console.WriteLine(robot.name + " loss " + attackPower + " health.");
